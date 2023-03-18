@@ -16,15 +16,12 @@ body {
 
 .hesap-makinesi {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  padding-top: 0;
+  margin: 0 auto;
   background-color: #9dc08b;
-  max-width: 800px;
+  max-width: 600px;
   border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0px 2px 4px #000000a3;
+  padding: 10px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .hesap-makinesi-text {
@@ -33,19 +30,16 @@ body {
   text-align: center;
   font-size: 30px;
   margin-bottom: 0;
+  margin-top: 0;
   text-shadow: 0px 1px 1px #000000a3;
   
-}
-
-.hesap-makinesi-form {
-  text-align: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 label {
@@ -84,8 +78,6 @@ input[type="button"]:hover {
   color: #333;
 }
 
-
-
 span#result {
   font-size: 24px;
   font-weight: bold;
@@ -103,11 +95,22 @@ span#result {
   margin-right: auto;
   width: 80%;
 }
+
 p {
   font-size: 18px;
   font-weight: bold;
   margin-top: 20px;
-  color: #333;
+  color: #edf1d6;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.answer {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #9dc08b;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
