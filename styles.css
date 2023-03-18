@@ -1,0 +1,113 @@
+body {
+  margin: 20px;
+  padding: 20px;
+  font-family: sans-serif;
+  background-color: #edf1d6;
+}
+
+.islamic-date-text {
+  color: #9dc08b;
+  font-size: 250%;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  text-shadow: 0px 1px 1px #000000a3;
+}
+
+.hesap-makinesi {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  padding-top: 0;
+  background-color: #9dc08b;
+  max-width: 800px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 2px 4px #000000a3;
+}
+
+.hesap-makinesi-text {
+  color: #609966;
+  padding: 2rem;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 0;
+  text-shadow: 0px 1px 1px #000000a3;
+  
+}
+
+.hesap-makinesi-form {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+  background-color: #edf1d6;
+}
+
+input[type="button"] {
+  background-color: #333;
+  color: #edf1d6;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="button"]:hover {
+  background-color: #edf1d6;
+  color: #333;
+}
+
+
+
+span#result {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.baslik {
+  color: #9dc08b;
+  padding: 2rem;
+  text-align: center;
+  font-size: 30px;
+}
+
+.bilgi {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #333;
+  text-align: center;
+}
+

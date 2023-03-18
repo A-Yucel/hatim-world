@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+    <script src="https://cdn.aladhan.com/v1/hijriCalendar.js"></script>
+    <script>
+      function updateIslamicDate() {
+        var hijriDate = new Date().toLocaleString("en-US", { timeZone: "Asia/Riyadh" });
+        var islamicDate = new Date(hijriDate).toLocaleString("en-US", { timeZone: "Asia/Riyadh", calendar: "islamic", day: "numeric", month: "long", year: "numeric" });
+        var islamicTime = new Date(hijriDate).toLocaleString("en-US", { timeZone: "Asia/Riyadh", hour: "numeric", minute: "numeric", hour12: true });
+        document.getElementById("islamic-date").innerHTML = islamicDate + " (" + islamicTime + ")";
+      }
+      setInterval(updateIslamicDate, 1000); // update every second
+    </script>
+    
+    <script> //Script for calculating the page to read given the day and the number
+      function calculate() {
+        var day = parseInt(document.getElementById("day").value);
+        var number = parseInt(document.getElementById("number").value);
+        var result = ((number-1 + day-1) % 30) + 1;
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+
+
+  </head>
+  <body onload="updateIslamicDate()">
+      <h1 class="islamic-date-text" id="islamic-date"></h1>
+      
+      <script>
+        var today = new Date();
+        var date = today.getDate();
+        var month = today.getMonth();
+        var year = today.getFullYear();
+        
+        var monthsIslamic = ["Muharram", "Safar", "Rabi' al-awwal", "Rabi' al-thani", "Jumada al-awwal", "Jumada al-thani", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhu al-Qidah", "Dhu al-Hijjah"];
+        
+        var monthIslamic = monthsIslamic[month];
+        
+        var dayMiladi = new Date(year, month, date);
+        var dayMiladiTime = dayMiladi.getTime();
+        var dayIslamicTime = dayMiladiTime + 86400000 * 1.035; // Adjust for Islamic calendar
+        var dayIslamic = new Date(dayIslamicTime);
+        var yearIslamic = dayIslamic.getFullYear();
+        var dateIslamic = dayIslamic.getDate();
+        
+        var islamicDateString = dateIslamic + " " + monthIslamic + " " + yearIslamic + " AH";
+        document.getElementById("islamic-date").innerHTML = islamicDateString;
+      </script>
+
+    <h1 class="hesap-makinesi-text">Hesap Makinesi</h1>
+    <div class="hesap-makinesi">
+    <form class="hesap-makinesi-form">
+      <label for="day">Gün:</label>
+      <input type="text" id="day" name="day"><br><br>
+      <label for="number">Numara:</label>
+      <input type="text" id="number" name="number"><br><br>
+      <input type="button" value="Calculate" onclick="calculate()">
+    </form>
+    <p>Bugun okumaniz gereken cüz: </p>
+    <p id="result"><span id="result"></span></p>
+    </div>
+    
+    <div class="bilgi">
+        <h1 class="baslik">Bu projenin amaci nedir?</h1>
+        <p>Ramazan boyunca 1 hatim okuyup 30 hatim sevabi almak istemez misiniz?</p>
+        <p>Okudugunuz gibi bu projenin hedefi Ramazan ayi boyunca Kuran-i Kerim'i bastan sona bitirmek ve bir hatim okurken insAllah 30 hatim sevabi almak</p>
+        <h1 class="baslik">Peki bunu nasil basaracagiz?</h1>
+        <p>Bu projenin mantigi toplu okunan hatimlerle neredeyse ayni ancak bir farki var hergun ayni cuzu okumak yerine, bir sonraki cuzu okuyorsunuz mesela eger bugun 4cu cuzu okuduysaniz yarin 5.ci veya bugun 30.cu cuzu okuduysaniz yarin 1ci cuzu okumaniz gerekiyor bu sayede hem Kuran-i Kerim'in tamamini okumus oluyorsunuz hemde toplu olarak hergun bir hatim bitiriyorsunuz</p>
+        <p>Hergun nereye okumaniz gerektigini bulmak zor olmaz mi? Iste bu websitesi tam burada devreye giriyor tek yapmaniz gereken su linkten 1 den 30a bir numara almak, daha sonra hergun bu websitesine ne girip yukarida gordugunuz takvimden ramazanin kacinci gunu oldugunu secmek daha sonra webstesi bir tablo seklinde hangi numaranin hangi sayfayi okumasi gerektigini gosterekcek zaten yukarida da ramazan takvimimiz mevcut oraya bakarak bugunun hangi gun oldugunu ogrenebilirsiniz</p>
+    </div>
+  </body>
+</html>
+</html>
